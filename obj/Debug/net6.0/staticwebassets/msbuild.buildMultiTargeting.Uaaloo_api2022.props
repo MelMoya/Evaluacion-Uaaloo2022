@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Uaaloo_api2022.props" />
+</Project>

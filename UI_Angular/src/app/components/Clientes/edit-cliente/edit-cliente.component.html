@@ -1,0 +1,30 @@
+<div class="container my-5">
+    <h1 class="mb-3">Editar / Eliminar Cliente</h1>
+    <div class="row">
+        <div class="col-4">
+            <form #form="ngForm" (ngSubmit)="updateCliente()">
+                <div class="mb-3">
+                    <label for="id" class="form-label">ID</label>
+                    <input type="text" class="form-control" id="id" readonly name="id" [(ngModel)]="detallesCliente.id">
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="detallesCliente.name">
+                </div>
+                <div class="mb-3">
+                    <label for="surname" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="surname" name="surname"
+                        [(ngModel)]="detallesCliente.surname">
+                </div>
+                <div class="mb-3">
+                    <label for="adress" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="adress" name="adress"
+                        [(ngModel)]="detallesCliente.adress">
+                </div>
+                <button type="submit" class="btn btn-primary" *ngIf= "detallesCliente.name != '' 
+                && detallesCliente.surname != '' && detallesCliente.adress != ''">Guardar</button>
+                <button type="button" class="btn btn-danger" (click)="deleteCliente(detallesCliente.id)">Eliminar</button>
+            </form>
+        </div>
+    </div>
+</div>

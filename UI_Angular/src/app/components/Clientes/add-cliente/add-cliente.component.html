@@ -1,0 +1,23 @@
+<div class="container my-5">
+    <h1 class="mb-3">Agregar Cliente</h1>
+    <div class="row">
+        <div class="col-4">
+            <form #form="ngForm" (ngSubmit)="addCliente()"> 
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name" [(ngModel)] = "addClienteRequest.name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="surname" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="surname" name="surname" [(ngModel)] = "addClienteRequest.surname">
+                </div>
+                <div class="mb-3">
+                    <label for="adress" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="adress" name="adress" [(ngModel)] = "addClienteRequest.adress">
+                </div>
+                <button type="submit" class="btn btn-primary" *ngIf= "addClienteRequest.name != ' ' && 
+                addClienteRequest.surname != ' ' && addClienteRequest.adress != ' '">Agregar</button>
+            </form>
+        </div>
+    </div>
+</div>
